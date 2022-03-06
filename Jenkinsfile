@@ -12,7 +12,7 @@ pipeline {
         stage('Fetching iBLIS application') {
           steps {
             echo 'Fetching application from github'
-            sh '[ -d "iBLIS" ] && echo "iBLIS found, skipping cloning." || git clone https://github.com/HISMalawi/iBLIS.git iBLIS'
+            sh '[ -d "iBLIS" ] && echo "iBLIS found, skipping cloning." '
             sh 'cd $WORKSPACE/iBLIS |git fetch https://github.com/HISMalawi/iBLIS.git'
             sh '''echo "Adding permissions for the app to all users" chmod 777 $WORKSPACE/iBLIS
 '''
